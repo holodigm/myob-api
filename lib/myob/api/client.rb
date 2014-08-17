@@ -38,11 +38,13 @@ module Myob
       end
 
       def get_access_code_url(params = {})
-        @client.auth_code.authorize_url(params.merge(redirect_uri: @redirect_uri))
+        @client.auth_code.authorize_url(params.merge(scope: 'la.global', redirect_uri: @redirect_uri))
       end
 
       def get_access_token(access_code)
-        @token         = @client.auth_code.get_token(access_code, redirect_uri: @redirect_uri)
+        @token = @client.auth_code.get_token(access_code,
+                                              redirect_uri: @redirect_uri,
+                                              headers: { 'x-myobapi-version' => 'v2', 'x-myobapi-key'=> @consumer[:key]})
         @access_token  = @token.token
         @expires_at    = @token.expires_at
         @refresh_token = @token.refresh_token
