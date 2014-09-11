@@ -21,6 +21,8 @@ module Myob
         model :EmployeePayrollAdvice
 
         model :Invoice
+        model :InvoiceItem
+        model :InvoiceService
 
         model :PayrollCategory
         model :Wage
