@@ -6,6 +6,9 @@ require 'myob/api/models/base'
 require 'myob/api/models/company_file'
 require 'myob/api/models/company'
 
+require 'myob/api/models/account'
+require 'myob/api/models/tax_code'
+
 require 'myob/api/models/contact'
 require 'myob/api/models/customer'
 require 'myob/api/models/employee'

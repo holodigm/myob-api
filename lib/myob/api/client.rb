@@ -13,6 +13,9 @@ module Myob
 
         model :Company
 
+        model :Account
+        model :TaxCode
+
         model :Contact
         model :Customer
         model :Employee
